@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "api.host.baseurl",
+    "type": "java.lang.String",
+    "description": "Product Test API URL"
+  },
+  {
+    "name": "thread.parallelism",
+    "type": "java.lang.String",
+    "description": "A description for 'thread.parallelism'"
+  },
+  {
+    "name": "api.host.readTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'api.host.readTimeout'"
+  },
+  {
+    "name": "api.host.connectTimeout",
+    "type": "java.lang.String",
+    "description": "A description for 'api.host.connectTimeout'"
+  }
+]}
