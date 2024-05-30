@@ -1,6 +1,6 @@
 # Technical solution
 
-Price application
+Warehouse back application
 
 ## Steps to run
 - mvn package
