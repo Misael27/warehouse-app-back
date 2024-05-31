@@ -4,6 +4,8 @@ import com.warehouse.repository.RackRepository;
 import com.warehouse.repository.WarehouseRepository;
 import com.warehouse.usecase.rack.CreateRackUseCase;
 import com.warehouse.usecase.rack.CreateRackUseCaseUseCaseImpl;
+import com.warehouse.usecase.rack.DeleteRackUseCase;
+import com.warehouse.usecase.rack.DeleteRackUseCaseImpl;
 import com.warehouse.usecase.warehose.*;
 import com.warehouse.usecase.warehouse.*;
 import org.springframework.boot.SpringApplication;
@@ -65,6 +67,11 @@ public class Application {
 	@Bean
 	GetRackPermutationsUseCase getRackPermutationsUseCase(final WarehouseRepository warehouseRepository) {
 		return new GetRackPermutationsUseCaseImpl(warehouseRepository);
+	}
+
+	@Bean
+	DeleteRackUseCase deleteRackUseCase(final RackRepository rackRepository) {
+		return new DeleteRackUseCaseImpl(rackRepository);
 	}
 	
 }

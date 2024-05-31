@@ -23,6 +23,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/warehouse")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class WarehouseController {
 
   private final CreateWarehouseUseCase createWarehouseUseCase;
