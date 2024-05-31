@@ -15,9 +15,9 @@ public class DeleteRackUseCaseImpl implements DeleteRackUseCase{
 
   @Override
   public void execute(Integer rackId) {
-    final Rack warehouse = this.rackRepository.findById(rackId)
+    final Rack rack = this.rackRepository.findById(rackId)
         .orElseThrow(() -> new ResourceNotFoundException("rackId "+rackId+" not found", "RACK_NOT_FOUND"));
-    this.rackRepository.delete(warehouse);
+    this.rackRepository.delete(rack);
   }
 
 }

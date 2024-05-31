@@ -1,9 +1,7 @@
 package com.warehouse.repository;
 
 import com.warehouse.entity.Rack;
-import com.warehouse.entity.Warehouse;
 import com.warehouse.mapping.RackTable;
-import com.warehouse.mapping.WarehouseTable;
 import com.warehouse.repository.springdata.SpringDataRackRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Repository;
@@ -31,12 +29,13 @@ public class RackRepositoryImpl implements RackRepository {
 
   @Override
   public Optional<Rack> findById(Integer rackId) {
-    return Optional.empty();
+    return springDataRackRepository.findById(rackId)
+        .map(rackTable -> this.mapper.map(rackTable, Rack.class));
   }
 
   @Override
-  public void delete(Rack warehouse) {
-    springDataRackRepository.deleteById(warehouse.getId());
+  public void delete(Rack rack) {
+    springDataRackRepository.deleteById(rack.getId());
   }
 
 }
