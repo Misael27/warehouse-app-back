@@ -28,7 +28,7 @@ public class Warehouse implements ICommonDomain {
   @Override
   public boolean isValid() {
     return uuid != null && client != null && family != null && size != null 
-        && (rackList == null || rackList.size() <= size);
+        && (rackList == null || (rackList.size() <= size && rackList.stream().allMatch(r -> r.isValidWarehouse(this))));
   }
 
   public void update(Warehouse warehouseUpdate) {
